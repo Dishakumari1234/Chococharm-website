@@ -79,6 +79,22 @@
             cursor: pointer;
             transition: 0.3s;
         }
+        .nav {
+            background: #ffb48a;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+        }
+        .nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: 600;
+            color: #5a2a00;
+            font-size: 18px;
+        }
+        .nav a:hover {
+            color: #fff;
+        }
 
         .login-btn:hover {
             background: #8c5638;
@@ -87,6 +103,15 @@
 </head>
 
 <body>
+     <div class="nav">
+        <a href="webdproject.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="login.html">Login</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="order.html">Order</a>
+    </div>
+
 
     <div class="login-container">
         <h2>The ChocoCharm</h2>
@@ -114,10 +139,8 @@
             let password = document.getElementById("password").value.trim();
             let error = document.getElementById("errorMessage");
 
-            // Reset error
             error.textContent = "";
 
-            // Email validation
             let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
             if (email === "") {
@@ -130,7 +153,6 @@
                 return;
             }
 
-            // Password validation
             if (password === "") {
                 error.textContent = "Password cannot be empty!";
                 return;
@@ -141,20 +163,9 @@
                 return;
             }
 
-            // If everything is valid
             alert("Login Successful!");
         });
     </script>
 
 </body>
-</html>
-        
-
-
-
-
-
-
-
-
 </html>
