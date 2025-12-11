@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now | The ChocoCharm</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+
+    <h1 class="title">Order Now</h1>
+    <p class="subtitle">Fill the details below to place your sweet order 🍰</p>
+
+    <div class="order-box">
+
+        <label>Your Name:</label>
+        <input type="text" id="name">
+
+        <label>Your Phone:</label>
+        <input type="text" id="phone">
+
+        <label>Item You Want:</label>
+        <input type="text" id="item">
+
+        <label>Quantity:</label>
+        <input type="number" id="qty">
+
+        <label>Address:</label>
+        <textarea id="address"></textarea>
+
+        <button class="order-btn" onclick="showPopup()">Place Order</button>
+
+    </div>
+
+    <!-- Popup -->
+    <div class="popup" id="popupBox">
+        <div class="popup-content">
+            <h2>Order Successful 🎉</h2>
+            <p>Your order has been placed successfully!</p>
+            <button class="ok-btn" onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById("popupBox").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("popupBox").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

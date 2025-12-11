@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | The ChocoCharm</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: #f7e9dc;
+        }
+
+        .login-container {
+            width: 350px;
+            margin: 80px auto;
+            background: #ffffff;
+            padding: 30px 25px;
+            border-radius: 18px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-family: "Cookie", cursive;
+            font-size: 42px;
+            color: #5c3317;
+        }
+
+        .tagline {
+            margin-top: -10px;
+            font-size: 14px;
+            color: #b17340;
+        }
+
+        form {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 14px;
+            color: #5c3317;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0 15px 0;
+            border-radius: 10px;
+            border: 1px solid #d7c5b3;
+            outline: none;
+            background: #f6f1ea;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .login-btn {
+            width: 100%;
+            background: #b97a56;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #8c5638;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h2>The ChocoCharm</h2>
+        <p class="tagline">Baked with Love ❤</p>
+
+        <form id="loginForm">
+            <label>Email</label>
+            <input type="text" id="email" placeholder="Enter your email">
+
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+
+            <p class="error" id="errorMessage"></p>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // stop page reload
+
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let error = document.getElementById("errorMessage");
+
+            // Reset error
+            error.textContent = "";
+
+            // Email validation
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (email === "") {
+                error.textContent = "Email cannot be empty!";
+                return;
+            }
+
+            if (!emailPattern.test(email)) {
+                error.textContent = "Please enter a valid email!";
+                return;
+            }
+
+            // Password validation
+            if (password === "") {
+                error.textContent = "Password cannot be empty!";
+                return;
+            }
+
+            if (password.length < 6) {
+                error.textContent = "Password must be at least 6 characters!";
+                return;
+            }
+
+            // If everything is valid
+            alert("Login Successful!");
+        });
+    </script>
+
+</body>
+</html>
+        
+
+
+
+
+
+
+
+
+</html>
